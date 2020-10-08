@@ -32,6 +32,8 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     private static final int MY_PERMISSIONS_REQUEST_LOCATION = 99 ;
     private static final int CAPTURE_REQUEST_CODE = 0;
     private static final int SELECT_REQUEST_CODE = 1;
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         captureImage = findViewById(R.id.capture_image);
         selectImage = findViewById(R.id.select_image);
         imageView = findViewById(R.id.Image_view);
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.1.12:8585/retrofitimageupload/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.1.13:8585/retrofitimageupload/").addConverterFactory(GsonConverterFactory.create()).build();
      ourRetrofitClient = retrofit.create(OurRetrofitClient.class);
        progressDialog = new ProgressDialog(MainActivity.this);
        progressDialog.setMessage("Image Upload....");

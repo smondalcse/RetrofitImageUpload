@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+
+    <Button
+        android:id="@+id/uploadwithphp"
+        android:padding="30dp"
+        android:layout_margin="30dp"
+        android:text="Image Upload with PHP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+    <Button
+        android:id="@+id/uploadwithasp"
+        android:padding="30dp"
+        android:layout_margin="30dp"
+        android:text="Image Upload with ASP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
