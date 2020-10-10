@@ -34,7 +34,7 @@ public class ImageUploadASPServiceActivity extends AppCompatActivity {
 
     private OurRetrofitClient ourRetrofitClient;
     private EditText et;
-    private Button btnBrowse, btnUpload;
+    private Button btnBrowseImage, btnBrowse, btnUpload;
     private ImageView img;
 
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
@@ -63,8 +63,8 @@ public class ImageUploadASPServiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_image_upload_aspservice);
 
         et = findViewById(R.id.et);
-        btnBrowse = findViewById(R.id.btnBrowse);
-        btnBrowse.setOnClickListener(new View.OnClickListener() {
+        btnBrowseImage = findViewById(R.id.btnBrowseImage);
+        btnBrowseImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
@@ -72,6 +72,18 @@ public class ImageUploadASPServiceActivity extends AppCompatActivity {
                 intent.setAction(Intent.ACTION_PICK);
                 Intent result = Intent.createChooser(intent, "Choose File");
                 startActivityForResult(result, 100);
+            }
+        });
+
+        btnBrowse = findViewById(R.id.btnBrowse);
+        btnBrowse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("application/*");
+                //intent.addCategory(Intent.CATEGORY_OPENABLE);
+                Intent result = Intent.createChooser(intent, "Choose File");
+                startActivityForResult(result, 200);
             }
         });
 
@@ -128,6 +140,12 @@ public class ImageUploadASPServiceActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == 100){
+            if(resultCode == RESULT_OK){
+                Uri uri = data.getData();
+                imagePath = getPathFromUri(uri);
+                img.setImageURI(uri);
+            }
+        } else if(requestCode == 200){
             if(resultCode == RESULT_OK){
                 Uri uri = data.getData();
                 imagePath = getPathFromUri(uri);
