@@ -32,5 +32,25 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button download = findViewById(R.id.download);
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, DownloadFileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button downloadWithNotificationBar = findViewById(R.id.downloadWithNotificationBar);
+        downloadWithNotificationBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, DownloadWithNotificationBarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

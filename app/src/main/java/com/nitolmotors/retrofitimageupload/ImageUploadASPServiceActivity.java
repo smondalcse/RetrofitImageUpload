@@ -102,7 +102,6 @@ public class ImageUploadASPServiceActivity extends AppCompatActivity {
         Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.1.13/fileupload/api/").addConverterFactory(GsonConverterFactory.create()).build();
         ourRetrofitClient = retrofit.create(OurRetrofitClient.class);
 
-
     }
 
     private void uploadImage() {

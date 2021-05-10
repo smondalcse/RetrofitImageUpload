@@ -28,4 +28,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/download"
+        android:padding="30dp"
+        android:layout_margin="30dp"
+        android:text="Image Download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/downloadWithNotificationBar"
+        android:padding="30dp"
+        android:layout_margin="30dp"
+        android:text="Download with Notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
